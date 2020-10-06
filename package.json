@@ -3,8 +3,11 @@
   "version": "0.0.1",
   "description": "Node c++ addon utilities",
   "main": "index.js",
+  "bin": {
+    "eris": "./bin/eris.js"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "format": "prettier 'src/**/*.js' '*.js' 'bin/*.js' --write"
   },
   "repository": {
     "type": "git",
@@ -22,6 +25,10 @@
   "homepage": "https://github.com/liriliri/eris#readme",
   "dependencies": {},
   "devDependencies": {
-    "eustia-module": "^1.26.0"
+    "eustia-module": "^1.26.0",
+    "execa": "^4.0.3",
+    "licia": "^1.26.0",
+    "prettier": "^2.1.2",
+    "yargs": "^16.0.3"
   }
 }
