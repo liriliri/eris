@@ -1,0 +1,27 @@
+{
+  "name": "eris",
+  "version": "0.0.1",
+  "description": "Node c++ addon utilities",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liriliri/eris.git"
+  },
+  "keywords": [
+    "addon",
+    "utility"
+  ],
+  "author": "surunzi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/liriliri/eris/issues"
+  },
+  "homepage": "https://github.com/liriliri/eris#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "eustia-module": "^1.26.0"
+  }
+}
