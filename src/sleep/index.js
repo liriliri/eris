@@ -1,3 +1,1 @@
-const sleep = require('./build/Release/sleep.node')
-
-module.exports = sleep
+module.exports = require('./build/Release/sleep.node').sleep

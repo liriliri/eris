@@ -35,6 +35,7 @@ async function build(argv) {
   delete pkg.scripts
   delete pkg.devDependencies
   delete pkg.bin
+  pkg.gypfile = true
   const modulePkg = require(`../src/${module}/package.json`)
   extend(pkg, modulePkg)
 
