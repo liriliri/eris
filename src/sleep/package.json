@@ -1,5 +1,6 @@
 {
   "name": "eris-sleep",
   "version": "0.0.1",
-  "description": "Synchronous sleep"
+  "description": "Synchronous sleep",
+  "keywords": ["addon", "sleep"]
 }
