@@ -3,6 +3,7 @@ const expect = require('chai').expect
 
 describe('snapshot', () => {
   it('basic', () => {
-    console.log(snapshot())
+    const data = JSON.parse(snapshot());
+    expect(data).to.have.property('snapshot');
   })
 })
