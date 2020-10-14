@@ -7,7 +7,7 @@
     "eris": "./bin/eris.js"
   },
   "scripts": {
-    "format": "prettier 'src/**/*.js' '*.js' 'bin/*.js' --write"
+    "format": "prettier src/**/*.js *.js bin/*.js eustia/*.js --write"
   },
   "repository": {
     "type": "git",

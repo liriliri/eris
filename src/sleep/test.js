@@ -6,6 +6,6 @@ describe('sleep', () => {
   it('basic', () => {
     const start = now()
     sleep(1000)
-    expect(now() - start).to.be.above(1000)
+    expect(now() - start).to.be.above(999)
   })
 })

@@ -1,1 +1,3 @@
-module.exports = require('./build/Release/sleep.node').sleep
+const util = require('./util')
+
+module.exports = util.requireAddon('sleep').sleep

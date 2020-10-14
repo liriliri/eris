@@ -1,0 +1,6 @@
+{
+  "name": "eris-snapshot",
+  "version": "0.0.1",
+  "description": "Take V8 snapshot for later inspection",
+  "keywords": ["addon", "snapshot"]
+}

@@ -56,7 +56,11 @@ async function dev(argv) {
   const module = getModule(argv)
   if (!module) return
 
-  await runScript('node-gyp', ['rebuild', '--debug'], resolve(`../src/${module}`))
+  await runScript(
+    'node-gyp',
+    ['rebuild', '--debug'],
+    resolve(`../src/${module}`)
+  )
 }
 
 function getModule(argv) {
