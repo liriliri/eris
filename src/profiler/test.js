@@ -5,6 +5,8 @@ describe('profiler', () => {
   it('basic', () => {
     profiler.start('Profiler')
     const profile = profiler.stop('Profiler')
-    console.log(profile)
+    ;['startTime', 'endTime'].forEach((key) => {
+      expect(profile).to.have.property(key)
+    })
   })
 })
