@@ -1,3 +1,1 @@
-const util = require('./util')
-
-module.exports = util.requireAddon('snapshot').snapshot
+module.exports = require('./util').requireAddon('snapshot')
