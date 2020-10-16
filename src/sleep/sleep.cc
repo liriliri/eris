@@ -7,7 +7,6 @@
 napi_value Method(napi_env env, napi_callback_info info)
 {
   napi_status status;
-  napi_value undefined;
 
   size_t argc = 1;
   napi_value args[1];
@@ -20,10 +19,7 @@ napi_value Method(napi_env env, napi_callback_info info)
 
   std::this_thread::sleep_for(std::chrono::milliseconds(milliseconds));
 
-  status = napi_get_undefined(env, &undefined);
-  assert(status == napi_ok);
-
-  return undefined;
+  return nullptr;
 }
 
 napi_value Init(napi_env env, napi_value exports)
