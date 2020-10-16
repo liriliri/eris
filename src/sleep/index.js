@@ -1,3 +1,1 @@
-const util = require('./util')
-
-module.exports = util.requireAddon('sleep').sleep
+module.exports = require('./util').requireAddon('sleep')

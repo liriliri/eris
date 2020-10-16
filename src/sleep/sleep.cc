@@ -24,11 +24,12 @@ napi_value Method(napi_env env, napi_callback_info info)
 
 napi_value Init(napi_env env, napi_value exports)
 {
-  napi_status status;
-  napi_property_descriptor desc = {"sleep", 0, Method, 0, 0, 0, napi_default, 0};
-  status = napi_define_properties(env, exports, 1, &desc);
+  napi_value new_exports;
+
+  napi_status status = napi_create_function(env, "sleep", NAPI_AUTO_LENGTH, Method, nullptr, &new_exports);
   assert(status == napi_ok);
-  return exports;
+
+  return new_exports;
 }
 
 NAPI_MODULE(NODE_GYP_MODULE_NAME, Init)
