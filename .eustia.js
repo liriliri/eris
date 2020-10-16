@@ -1,6 +1,7 @@
 module.exports = {
   sleep: genConf('sleep'),
   snapshot: genConf('snapshot'),
+  profiler: genConf('profiler'),
 }
 
 function genConf(name) {
