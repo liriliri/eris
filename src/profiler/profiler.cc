@@ -47,7 +47,7 @@ Local<String> GetTitle(napi_env env, napi_callback_info info)
   napi_status status = napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
   assert(status == napi_ok);
   string title = napi_value_to_string(env, args[0]);
-  return String::NewFromUtf8(Isolate::GetCurrent(), title.c_str()).ToLocalChecked();
+  return String::NewFromUtf8(Isolate::GetCurrent(), title.c_str(), v8::NewStringType::kNormal).ToLocalChecked();
 }
 
 napi_value Start(napi_env env, napi_callback_info info)
@@ -162,7 +162,7 @@ napi_value Stop(napi_env env, napi_callback_info info)
   napi_value nodes;
   status = napi_create_array_with_length(env, list.size(), &nodes);
   assert(status == napi_ok);
-  for (int i = 0; i < list.size(); i++)
+  for (uint i = 0; i < list.size(); i++)
   {
     status = napi_set_element(env, nodes, i, list[i]);
     assert(status == napi_ok);
