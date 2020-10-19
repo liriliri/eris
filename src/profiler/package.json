@@ -1,0 +1,12 @@
+{
+  "name": "eris-profiler",
+  "version": "0.0.1",
+  "description": "Record V8 CPU profile",
+  "keywords": [
+    "addon",
+    "profiler"
+  ],
+  "dependencies": {
+    "nan": "^2.14.2"
+  }
+}

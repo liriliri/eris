@@ -9,7 +9,12 @@ npm install eris-snapshot --save
 ```
 
 ```javascript
-const snapshot = require('eris-snapshot');
+const fs = require('fs')
+const snapshot = require('eris-snapshot')
 
-snapshot();
+fs.writeFile('test.heapsnapshot', snapshot, function (err) {
+  if (err) {
+    console.log(err)
+  }
+})
 ```
