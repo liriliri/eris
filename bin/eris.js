@@ -20,10 +20,7 @@ program.command('build <module>').description('build packages').action(build)
 
 program.command('test <module>').description('run test').action(test)
 
-const args = process.argv
-if (args[2] === '--help' || args[2] === '-h') args[2] = 'help'
-
-program.parse(args)
+program.parse(process.argv)
 
 async function test(module) {
   await runScript('mocha', [resolve(`../src/${module}/test.js`)])
