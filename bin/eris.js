@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const yargs = require('yargs')
+const program = require('commander')
 const noop = require('licia/noop')
 const clone = require('licia/clone')
 const promisify = require('licia/promisify')
@@ -11,24 +11,25 @@ const shell = require('shelljs')
 const path = require('path')
 const execa = require('execa')
 
-yargs
-  .usage('Usage: <command> <module>')
-  .command('dev', 'clean, configure and build', noop, dev)
-  .command('build', 'build package', noop, build)
-  .command('test', 'run test', noop, test)
-  .help('h').argv
+program
+  .command('dev <module>')
+  .description('clean, configure and build')
+  .action(dev)
 
-async function test(argv) {
-  const module = getModule(argv)
-  if (!module) return
+program.command('build <module>').description('build packages').action(build)
 
+program.command('test <module>').description('run test').action(test)
+
+const args = process.argv
+if (args[2] === '--help' || args[2] === '-h') args[2] = 'help'
+
+program.parse(args)
+
+async function test(module) {
   await runScript('mocha', [resolve(`../src/${module}/test.js`)])
 }
 
-async function build(argv) {
-  const module = getModule(argv)
-  if (!module) return
-
+async function build(module) {
   await mkdir(resolve(`../dist/${module}`))
 
   const pkg = require('../package.json')
@@ -52,27 +53,12 @@ async function build(argv) {
   })
 }
 
-async function dev(argv) {
-  const module = getModule(argv)
-  if (!module) return
-
+async function dev(module) {
   await runScript(
     'node-gyp',
     ['rebuild', '--debug'],
     resolve(`../src/${module}`)
   )
-}
-
-function getModule(argv) {
-  const _ = clone(argv._)
-  _.shift()
-  const module = _.shift()
-
-  if (!module) {
-    console.log('A module name must be given.')
-  }
-
-  return module
 }
 
 function resolve(p) {
