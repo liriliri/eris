@@ -43,7 +43,7 @@ async function build(module) {
     'utf8'
   )
 
-  const files = ['README.md', '{index,util}.js', '*.cc', 'binding.gyp']
+  const files = ['README.md', 'index.js', '*.cc', 'binding.gyp']
 
   files.forEach((file) => {
     shell.cp(resolve(`../src/${module}/${file}`), resolve(`../dist/${module}`))
