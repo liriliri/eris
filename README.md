@@ -7,3 +7,4 @@ Node c++ addon utilities
 * [profiler](./src/profiler/README.md): Record V8 CPU profile.
 * [sleep](./src/sleep/README.md): Synchronous sleep.
 * [snapshot](./src/snapshot/README.md): Take V8 snapshot for later inspection.
+* [windrive](./src/windrive/README.md): Enumerate Windows logical drives.

@@ -1,0 +1,7 @@
+{
+  "name": "eris-windrive",
+  "version": "0.1.0",
+  "description": "Windows logical drive enumeration",
+  "keywords": ["addon", "windows", "drive"],
+  "os": ["win32"]
+}
