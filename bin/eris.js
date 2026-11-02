@@ -43,10 +43,13 @@ async function build(module) {
     'utf8'
   )
 
-  const files = ['README.md', 'index.js', '*.cc', 'binding.gyp']
+  const files = ['README.md', 'index.js', 'index.d.ts', '*.cc', 'binding.gyp']
 
   files.forEach((file) => {
-    shell.cp(resolve(`../src/${module}/${file}`), resolve(`../dist/${module}`))
+    const src = resolve(`../src/${module}/${file}`)
+    if (shell.test('-e', src) || file.includes('*')) {
+      shell.cp(src, resolve(`../dist/${module}`))
+    }
   })
 }
 

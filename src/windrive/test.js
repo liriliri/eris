@@ -13,7 +13,9 @@ describe('windrive', () => {
     expect(drives).to.be.an('array').that.is.not.empty
 
     for (const drive of drives) {
-      expect(drive).to.have.property('name').that.matches(/^[A-Z]:\\$/)
+      expect(drive)
+        .to.have.property('name')
+        .that.matches(/^[A-Z]:\\$/)
       expect(drive).to.have.property('type').that.is.a('string')
     }
   })
